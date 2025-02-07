@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1 {
+            color: #007BFF;
+            text-align: center;
+        }
+        .result-box {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .result-box strong {
+            color: #007BFF;
+        }
+        .error {
+            color: #dc3545;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Query Result</h1>
+    <div class="result-box">
+        <p><strong>Question:</strong> {{ question }}</p>
+        {% if "I'm sorry" in answer %}
+            <p class="error">{{ answer }}</p>
+        {% else %}
+            <p><strong>Answer:</strong></p>
+            <pre>{{ answer }}</pre>
+        {% endif %}
+    </div>
+    <a href="/" class="back-link">Back to Home</a>
+</body>
+</html>
